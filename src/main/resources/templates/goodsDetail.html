@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>商品详情</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="2">商品名称</td>
+            <td  th:text="${goods.goodsName}"></td>
+        </tr>
+        <tr>
+            <td colspan="2">商品图片</td>
+            <td><img src="@{${goods.goodsImg}}"</td>
+        </tr>
+        <tr>
+            <td colspan="2">秒杀开始时间</td>
+            <td>
+                <form id="secKill" method="post" action="/seckill/doSecKill">
+                    <input type="hidden" name="goodsId" th:value="${goods.id}" />
+                    <button type="submit" id="buyBtton" >立即秒杀</button>
+                </form>
+            </td>
+        </tr>
+
+    </table>
+
+</body>
+</html>
